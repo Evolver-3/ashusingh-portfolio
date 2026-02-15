@@ -1,7 +1,6 @@
 import React, { useState } from 'react' 
 import {motion, useMotionValueEvent, useScroll} from 'motion/react'
 import Container from './Container';
-import Dark from './DarkMode/Dark';
 
 
 const Navbar = () => {
@@ -58,7 +57,7 @@ const Navbar = () => {
 
       <img className='w-10 h-10 rounded-full' src="/profile.jpg" height="100" width="100" alt="profile"></img>
 
-      <Dark/>
+
 
       <div className='flex items-center'>
 

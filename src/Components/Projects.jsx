@@ -14,11 +14,11 @@ const projectCards=[
     }
 
   }
-]
+] 
 
-const Projects = () => {
+const Projects = ({dark}) => {
 
-  const isDark=localStorage.getItem("theme")==="dark"
+
   return (
     <Container>
     <div className='w-full h-screen'>
@@ -27,7 +27,7 @@ const Projects = () => {
         {projectCards.map((card,i)=>(
           <div className='w-full shadow-finta rounded-md' key={card.id}>
 
-            <img src={isDark? card.imgDark:card.imgLight} alt={card.text} className='object-cover' />
+            <img src={dark? card.imgDark:card.imgLight} alt={card.name} className='object-cover' />
           </div>
         ))}
 
