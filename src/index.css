@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+body,html{
+  font-family: monospace;
+  
+}
+
+
+
+:root{
+  --background:white;
+  --foreground:black;
+  --card:white;
+  --nav:oklch(70.4% 0.04 256.788);
+  
+ 
+}
+.dark{
+  --background:oklch(27.9% 0.041 260.031);
+  --foreground:white;
+  --card:oklch(21.6% 0.006 56.043);
+  --nav:oklch(43.9% 0 0);
+}
+
+@theme inline {
+
+  --shadow-acer:0px 2px 3px -1px rgba(0,0,0,0.1),0px 1px 0px 0px rgba(25,28,33,0.02),0px 0px 0px 1px rgba(25,28,33,0.08);
+  --color-primary:var(--color-neutral-800);
+  --color-secondary:var(--color-neutral-600);
+  --color-background:var(--background);
+  --color-foreground:var(--foreground);
+  --color-card:var(--card);
+  --color-nav:var(--nav);
+
+}
