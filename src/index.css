@@ -9,15 +9,15 @@ body,html{
   --background:white;
   --foreground:black;
   --card:white;
-  --nav:oklch(70.4% 0.04 256.788);
+  --nav:oklch(86.799% 0.01413 258.444);
   
  
 }
-.dark{
-  --background:oklch(27.9% 0.041 260.031);
+html.dark{
+  --background:black;
   --foreground:white;
   --card:oklch(21.6% 0.006 56.043);
-  --nav:oklch(43.9% 0 0);
+  --nav:oklch(21.6% 0.006 56.043);
 }
 
 @theme inline {

@@ -63,12 +63,12 @@ const Navbar = () => {
 
         {navItems.map((item,index)=>(
 
-          <a href={item.href} key={index} className='text-sm text-foreground relative px-2 py-1'
+          <a href={item.href} key={index} className='text-sm text-foreground relative px-2 py-1 hover:text-white dark:hover:text-black'
           onMouseEnter={()=>setHovered(index)}
           onMouseLeave={()=>setHovered(null)}>
 
             { hovered ===index &&
-              (<motion.span layoutId='hovered-span' className='h-full w-full absolute inset-0 rounded-md bg-neutral-100 '>
+              (<motion.span layoutId='hovered-span' className='h-full w-full absolute inset-0 rounded-md bg-neutral-100 dark:bg-gray-500'>
               </motion.span>)
             }
 

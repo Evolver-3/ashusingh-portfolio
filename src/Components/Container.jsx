@@ -1,16 +1,14 @@
-import React from 'react'
+import { motion } from "motion/react"
+
+const Container = ({ children, className = "" }) => {
+  return (
+    <div className={`max-w-7xl mx-auto w-full bg-background shadow-acer ${className}`}>
 
 
-const Container = ({children,className=""}) => {
-  return (<>
-    
-    <div className={`max-w-7xl mx-auto w-full bg-background ${className}`}>
-      
-      
-      {children}
+        {children}
+
+
     </div>
-    
-  </>
   )
 }
 

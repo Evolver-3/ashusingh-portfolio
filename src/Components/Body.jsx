@@ -18,10 +18,10 @@ const Body = () => {
 
 
   return (
-    <Container >
-    <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left pt-20 h-fit px-40 gap-10 shadow-acer">
 
-      <div className="w-40 h-40 bg-lime-400 rounded-full order-1 md:order-2 md:w-1/2 flex justify-center">
+    <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left pt-20 px-20 gap-10 ">
+
+      <div className="w-40 h-40 border border-white rounded-full order-1 md:order-2  flex justify-center container">
       </div>
  
       <div className="order-2 md:order-1 md:w-1/2 text-foreground flex flex-col gap-2">
@@ -112,7 +112,7 @@ const Body = () => {
      
   
    </div>
-   </Container>
+
 
   ) 
 
