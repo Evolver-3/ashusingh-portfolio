@@ -22,25 +22,19 @@ const App = () => {
   },[dark])
   
   return (
-    <div className=' relative h-screen w-full overflow-hidden'>
+    <motion.div 
 
-       <motion.div
-       initial={{scale:1,opacity:1}}
-        animate={{scale:[1,1.1,1],opacity:[1,0.9,0.7,0.9,1] }}
-        transition={{ duration: 20, repeat: Infinity }}
-        className={`
-          absolute inset-0 z-0
-          opacity-20 mix-blend-overlay pointer-events-none
-          transition-colors duration-500 ${dark?"bg-black":"bg-white"}`}
-/>
+    className=' relative w-full bg-card'>
+
+      <Navbar/>
       <Container>
       
-        <Navbar/>
+        
         <Dark dark={dark} setDark={setDark} />
         <Body/>
         <Projects dark={dark}/>
       </Container>
-    </div>
+    </motion.div>
   )
 }
 

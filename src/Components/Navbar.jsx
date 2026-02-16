@@ -44,7 +44,7 @@ const Navbar = () => {
     <motion.nav
     animate={{
        boxShadow:scrolled ? "var(--shadow-acer)" : "none",
-       width:scrolled ? "70%":"100%",
+       width:scrolled ? "80%":"100%",
        y:scrolled ? 10:0,
        borderRadius:scrolled? "10rem":"0"
     }}
@@ -53,7 +53,7 @@ const Navbar = () => {
       ease:"easeInOut"
     }}
     
-    className=' fixed inset-x-0 top-0 mx-auto max-w-7xl flex items-center justify-between p-2 bg-nav md:px-10'>
+    className=' fixed z-50 inset-x-0 top-0 mx-auto max-w-7xl flex items-center justify-between p-2 bg-nav md:px-10'>
 
       <img className='w-10 h-10 rounded-full' src="/profile.jpg" height="100" width="100" alt="profile"></img>
 
@@ -63,7 +63,7 @@ const Navbar = () => {
 
         {navItems.map((item,index)=>(
 
-          <a href={item.href} key={index} className='text-sm text-foreground relative px-2 py-1 hover:text-white dark:hover:text-black'
+          <a href={item.href} key={index} className='text-sm text-foreground relative px-2 py-1 hover:text-background'
           onMouseEnter={()=>setHovered(index)}
           onMouseLeave={()=>setHovered(null)}>
 

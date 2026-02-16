@@ -16,8 +16,8 @@ const hoveredVariants={
 
 const Body = () => {
 
-
   return (
+     <>
 
     <div className="flex flex-col md:flex-row items-center justify-center text-center md:text-left pt-20 px-20 gap-10 ">
 
@@ -105,13 +105,11 @@ const Body = () => {
           </motion.a>
 
           </motion.div>
-
-          
         </div>
       </div>
-     
-  
    </div>
+    <div className="w-9/10 mx-auto h-px border border-foreground "></div>
+   </>
 
 
   ) 
