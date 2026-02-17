@@ -28,14 +28,22 @@ const Projects = ({dark}) => {
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl md:mx-auto px-4' >
         
         {projectCards.map((card,i)=>(
-          <div className='w-full shadow-acer border border-foreground rounded-md bg-bottom' key={card.id}>
+          <div className='w-full shadow-acer border border-bdr rounded-md bg-bottom' key={card.id}>
 
-            <img src={dark? card.imgDark:card.imgLight} alt={card.name} className='object-cover aspect-videod rounded-md' />
+            <img src={dark? card.imgDark:card.imgLight} alt={card.name} className='object-cover aspect-video rounded-md' />
 
             <div className=' text-foreground flex flex-col gap-2 py-2 px-3'>
               <h2 className='font-bold text-shadow-xs'>{card.name}</h2>
               <h3 className='text-neutral-600'>{card.year}</h3>
               <p className='leading-tight text-neutral-500'>{card.text}</p>
+            </div>
+
+            <div className='px-3 py-2 flex gap-5 text-md'>
+              {card.Stack.language.map((stack)=>(
+                <div key={stack} className='rounded-md border border-btn shadow-acer bg-card text-foreground px-2 text-shadow-sm'>
+                  {stack}
+                </div>
+              ))}
             </div>
 
             <div className='flex gap-5 px-3 py-2'>
@@ -62,11 +70,16 @@ const Projects = ({dark}) => {
 
 export default Projects
 
-const LinkBtn=({link,logo,btnTag})=>{
-  return(
-    <button className='flex gap-1 rounded-md text-background items-center justify-center px-1 py-0.5 bg-foreground shadow-acer border border-background'>
-      <span className='text-[2px]'>{logo}</span>
-      <a href={link}>{btnTag}</a>
-    </button>
+const LinkBtn = ({ link, logo, btnTag }) => {
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className='flex gap-2 rounded-md text-background items-center justify-center px-2 py-1 bg-foreground shadow-acer border border-background cursor-pointer hover:bg-btn hover:-translate-y-0.5 hover:scale-95 active:scale-95 transition duration-200'
+    >
+      <span className='text-xs'>{logo}</span>
+      <span className='text-xs'>{btnTag}</span>
+    </a>
   )
 }
