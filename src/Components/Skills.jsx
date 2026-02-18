@@ -53,12 +53,12 @@ const Skills = () => {
     <h2 className='relative text-5xl text-foreground   '>Skills
     </h2>
 
-    <div className='w-full  shadow-acer border border-foreground mx-auto rounded-md mt-10 md:mx-10 flex  gap-20 justify-around h-80'
+    <div className='w-full  shadow-acer border border-foreground mx-auto rounded-md mt-10 md:mx-10 flex flex-col md:flex-row justify-around h-80 '
      ref={scope}
      >
 
       <motion.div
-      className='relative flex flex-col items-center w-1/2'>
+      className='relative bg-red-700 md:w-1/2'>
 
 
         <SmallItem data={"Frontend Technology"} className='absolute top-10 left-1/2 -translate-x-1/2 first'
