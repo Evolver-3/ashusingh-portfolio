@@ -11,6 +11,8 @@ body,html{
   --card:white;
   --nav:oklch(86.799% 0.01413 258.444);
   --bottom:oklch(87.2% 0.01 258.338);
+  --btn:var(--color-neutral-800);
+  --bdr:oklch(81.294% 0.04946 255.177);
   
  
 }
@@ -20,6 +22,8 @@ html.dark{
   --card:oklch(21.6% 0.006 56.043);
   --nav:oklch(21.6% 0.006 56.043);
   --bottom:oklch(20.8% 0.042 265.755);
+  --btn:var(--color-neutral-400);
+  --bdr:oklch(70.9% 0.01 56.259);
 }
 
 @theme inline {
@@ -32,5 +36,7 @@ html.dark{
   --color-card:var(--card);
   --color-nav:var(--nav);
   --color-bottom:var(--bottom);
+  --color-btn:var(--btn);
+  --color-bdr:var(--bdr);
 
 }

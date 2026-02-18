@@ -26,7 +26,7 @@ const Body = () => {
  
       <div className="order-2 md:order-1 md:w-1/2 text-foreground flex flex-col gap-2">
     
-        <CharAnimate text="Ashu Singh"/>
+        <CharAnimate text="Ashu Singh" className='text-md'/>
 
         <h3 className="text-md ">Frontend dev</h3>
 
@@ -108,7 +108,7 @@ const Body = () => {
         </div>
       </div>
    </div>
-    <div className="w-9/10 mx-auto h-px border border-foreground "></div>
+    <div className="w-9/10 mx-auto h-px border border-foreground my-10"></div>
    </>
 
 

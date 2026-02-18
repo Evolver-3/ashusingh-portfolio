@@ -5,6 +5,7 @@ import Projects from './Components/Projects'
 import Dark from './Components/DarkMode/Dark'
 import Container from './Components/Container'
 import {motion} from 'motion/react'
+import Skills from './Components/Skills'
 
 const App = () => {
   const [dark,setDark]=useState(
@@ -33,6 +34,7 @@ const App = () => {
         <Dark dark={dark} setDark={setDark} />
         <Body/>
         <Projects dark={dark}/>
+        <Skills/>
       </Container>
     </motion.div>
   )
