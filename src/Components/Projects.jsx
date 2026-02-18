@@ -38,9 +38,9 @@ const Projects = ({dark}) => {
               <p className='leading-tight text-neutral-500'>{card.text}</p>
             </div>
 
-            <div className='px-3 py-2 flex gap-5 text-md'>
+            <div className='px-3 py-2 flex gap-1 md:gap-4 text-md '>
               {card.Stack.language.map((stack)=>(
-                <div key={stack} className='rounded-md border border-btn shadow-acer bg-card text-foreground px-2 text-shadow-sm'>
+                <div key={stack} className='rounded-md border border-btn shadow-acer bg-card text-foreground px-1 md:px-2 text-shadow-sm '>
                   {stack}
                 </div>
               ))}
