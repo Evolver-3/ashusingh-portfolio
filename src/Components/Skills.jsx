@@ -7,7 +7,7 @@ const Skills = () => {
 
   const [scope,animate]=useAnimate()
 
-  const isInView=useInView(scope)
+  const isInView=useInView(scope,{margin:"100px"})
 
   const spring = {
   type: "spring",
@@ -19,9 +19,9 @@ const Skills = () => {
   const AnimationTree=async()=>{
     await animate(".first",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,...spring})
 
-  await new Promise(resolve => setTimeout(resolve, 100))
+  
 
-    await animate(".secOne",{opacity:1,filter:"blur(0px)",y:0},spring)
+    await animate(".secOne",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,...spring})
 
     await Promise.all([
     animate(".secTwo",{opacity:1,filter:"blur(0px)",x:0},spring),
@@ -29,10 +29,10 @@ const Skills = () => {
     animate(".secThree",{opacity:1,filter:"blur(0px)",x:0},spring)
     ])
 
-    await new Promise(resolve => setTimeout(resolve, 100))
+  
 
     await Promise.all([
-    animate(".thirdOne",{opacity:1,filter:"blur(0px)",y:0},spring),
+    animate(".thirdOne",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,...spring}),
 
     animate(".thirdTwo",{opacity:1,filter:"blur(0px)",y:0},spring)
     ])
@@ -41,15 +41,22 @@ const Skills = () => {
 
   useEffect(()=>{
 
-    if(!isInView) return 
-    
+    if(isInView){
       AnimationTree()
-    
+    }else{
+        animate(".first", {opacity:0, y:-40})
+        animate(".secOne", {opacity:0, y:-35})
+        animate(".secTwo", {opacity:0, x:120})
+        animate(".secThree", {opacity:0, x:-150})
+        animate(".thirdOne", {opacity:0, y:-100})
+        animate(".thirdTwo", {opacity:0, y:-100})
+      
+    }
   },[isInView])
 
 
   return (
-  <div className='w-full flex flex-col items-center justify-center my-10 '>
+  <div className='w-full flex flex-col items-center justify-center my-10 h-screen'>
     <h2 className='relative text-5xl text-foreground   '>Skills
     </h2>
 
@@ -58,55 +65,54 @@ const Skills = () => {
      >
 
       <motion.div
-      className='relative md:w-1/2'>
+      className=' md:w-1/2 flex flex-col items-center justify-center py-10'>
 
 
-        <SmallItem data={"Frontend Technology"} className='absolute top-10 left-1/2 -translate-x-1/2 first'
+        <SmallItem data={"Frontend Technology"} className=' first'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{y:-40}}/>
 
-        {/* <svg className='absolute top-17 left-1/3 -translate-x-1/2' width="104" height="90" viewBox="0 10 91 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M90 0V34.5H0.5V71" stroke="black"/>
-        </svg> */}
-
-        <svg className='absolute top-[68px] left-1/3 -translate-x-1/2 rotate-y-180' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.5 0V38H105V78.5V84.5" stroke="black"/>
+        <div className='flex gap-1 sm:gap-18 '>
+          <svg className=' rotate-y-180 text-foreground' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.5 0V38H105V78.5V84.5" stroke="currentColor"/>
         </svg>
 
+        <svg className=' text-foreground' width="1" height="85" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="currentColor"/></svg>
 
-        <SmallItem data={"JavaScript"} className='absolute top-40 left-[10%] secTwo'
+        <svg className=' text-foreground' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.5 0V38H105V78.5V84.5" stroke="currentColor"/>
+        </svg>
+        </div>
+
+        <div className='grid grid-cols-3 gap-2 sm:gap-20 place-items-center'>
+        <SmallItem data={"JavaScript"} className='secTwo'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{x:120}}/>
 
-        <svg className='absolute top-[68px] left-1/2 translate-x-1/2' width="1" height="82" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="black"/></svg>
-
-
-
-
-        <SmallItem data={"HTML5"}  className='absolute top-40 left-1/2 -translate-x-1/2 secOne'
+        <SmallItem data={"HTML5"}  className='secOne'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{y:-35}}/>
 
-      <svg className='absolute top-[68px] right-1/3 translate-x-1/2' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0.5 0V38H105V78.5V84.5" stroke="black"/>
-      </svg>
-
-
-        <SmallItem data={'CSS3'} className='absolute top-40 right-[15%] secThree'
+        <SmallItem data={'CSS3'} className='secThree'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{x:-150}}/>
+        </div>
+ 
+        <div className='grid grid-cols-2 gap-58 sm:gap-92'>
+          <svg className='text-foreground' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="currentColor"/></svg>
 
-        <svg className='absolute top-[182px] right-1/5  translate-x-1/2' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="black"/></svg>
+        <svg className='text-foreground' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="currentColor"/></svg>
+        </div>
 
-        <SmallItem data={"React"}  className='absolute top-60 left-[15%]  thirdOne'
+        <div className='grid grid-cols-2 gap-16 sm:gap-49 place-items-start'>
+          <SmallItem data={"React"}  className='thirdOne'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{y:-100}}/>
 
-        <svg className='absolute top-[182px] left-1/5 translate-x-1/2' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="black"/></svg>
-
-        <SmallItem data={'Tailwind CSS'}  className='absolute top-60 right-[5%] thirdTwo'
+        <SmallItem data={'Tailwind CSS'}  className='thirdTwo'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{y:-100}}/>
+        </div>
    
       </motion.div>
 
@@ -136,7 +142,7 @@ const SmallItem=({data,className,initialPosition})=>{
     initial={{
       opacity:0,
       filter:"blur(3px)",
-      ...initialPosition
+      ...(initialPosition || {})
     }}>
       <CharAnimate text={data}/>
     </motion.div>
