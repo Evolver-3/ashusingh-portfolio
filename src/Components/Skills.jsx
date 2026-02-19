@@ -58,30 +58,53 @@ const Skills = () => {
      >
 
       <motion.div
-      className='relative bg-red-700 md:w-1/2'>
+      className='relative md:w-1/2'>
 
 
         <SmallItem data={"Frontend Technology"} className='absolute top-10 left-1/2 -translate-x-1/2 first'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{y:-40}}/>
 
+        {/* <svg className='absolute top-17 left-1/3 -translate-x-1/2' width="104" height="90" viewBox="0 10 91 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 0V34.5H0.5V71" stroke="black"/>
+        </svg> */}
+
+        <svg className='absolute top-[68px] left-1/3 -translate-x-1/2 rotate-y-180' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.5 0V38H105V78.5V84.5" stroke="black"/>
+        </svg>
+
+
         <SmallItem data={"JavaScript"} className='absolute top-40 left-[10%] secTwo'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{x:120}}/>
+
+        <svg className='absolute top-[68px] left-1/2 translate-x-1/2' width="1" height="82" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="black"/></svg>
+
+
+
 
         <SmallItem data={"HTML5"}  className='absolute top-40 left-1/2 -translate-x-1/2 secOne'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{y:-35}}/>
 
-        <SmallItem data={'CSS3'} className='absolute top-40 right-[10%] secThree'
+      <svg className='absolute top-[68px] right-1/3 translate-x-1/2' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.5 0V38H105V78.5V84.5" stroke="black"/>
+      </svg>
+
+
+        <SmallItem data={'CSS3'} className='absolute top-40 right-[15%] secThree'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{x:-150}}/>
 
-        <SmallItem data={"React"}  className='absolute top-60 left-[10%]  thirdOne'
+        <svg className='absolute top-[182px] right-1/5  translate-x-1/2' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="black"/></svg>
+
+        <SmallItem data={"React"}  className='absolute top-60 left-[15%]  thirdOne'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{y:-100}}/>
 
-        <SmallItem data={'Tailwind CSS'}  className='absolute top-60 right-[10%] thirdTwo'
+        <svg className='absolute top-[182px] left-1/5 translate-x-1/2' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="black"/></svg>
+
+        <SmallItem data={'Tailwind CSS'}  className='absolute top-60 right-[5%] thirdTwo'
         initial={{opacity:0,filter:"blur(3px)"}}
         initialPosition={{y:-100}}/>
    
