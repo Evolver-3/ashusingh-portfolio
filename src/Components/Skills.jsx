@@ -9,32 +9,34 @@ const Skills = () => {
 
   const isInView=useInView(scope,{margin:"100px"})
 
-  const spring = {
-  type: "spring",
-  stiffness: 60,
-  damping: 15,
-  mass: 3.5
-  }
 
   const AnimationTree=async()=>{
-    await animate(".first",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,...spring})
-
-  
-
-    await animate(".secOne",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,...spring})
+    await animate(".first",{opacity:1,filter:"blur(0px)",y:0},{delay:0.2,duration:1,ease:"easeIn"})
 
     await Promise.all([
-    animate(".secTwo",{opacity:1,filter:"blur(0px)",x:0},spring),
-
-    animate(".secThree",{opacity:1,filter:"blur(0px)",x:0},spring)
+      animate(".svgOne",{pathLength:1},{duration:1,ease:"easeInOut"}),
+      animate(".svgTwo",{pathLength:1},{duration:1,ease:"easeInOut"}),
+      animate(".svgThree",{pathLength:1},{duration:1,ease:"easeInOut"})
     ])
 
-  
+    await Promise.all([
+      animate(".secOne",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,duration:1,ease:"easeIn"}),
+      
+      animate(".secTwo",{opacity:1,filter:"blur(0px)",y:0},{duration:1,ease:"easeIn"}),
+      
+      animate(".secThree",{opacity:1,filter:"blur(0px)",y:0},{duration:1,ease:"easeIn"})
+    ])
 
     await Promise.all([
-    animate(".thirdOne",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,...spring}),
+      animate(".svgFour",{pathLength:1},{duration:1,ease:"easeInOut"}),
+      animate(".svgFive",{pathLength:1},{duration:1,ease:"easeInOut"})
+    ])
 
-    animate(".thirdTwo",{opacity:1,filter:"blur(0px)",y:0},spring)
+    await Promise.all([
+
+      animate(".thirdOne",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,duration:1,ease:"easeIn"}),
+
+      animate(".thirdTwo",{opacity:1,filter:"blur(0px)",y:0},{duration:1,ease:"easeIn"})
     ])
 
   }
@@ -45,11 +47,16 @@ const Skills = () => {
       AnimationTree()
     }else{
         animate(".first", {opacity:0, y:-40})
-        animate(".secOne", {opacity:0, y:-35})
-        animate(".secTwo", {opacity:0, x:120})
-        animate(".secThree", {opacity:0, x:-150})
-        animate(".thirdOne", {opacity:0, y:-100})
-        animate(".thirdTwo", {opacity:0, y:-100})
+        animate(".svgOne",{pathLength:0})
+        animate(".svgTwo",{pathLength:0})
+        animate(".svgThree",{pathLength:0})
+        animate(".secOne", {opacity:0, y:-15})
+        animate(".secTwo", {opacity:0, y:-15})
+        animate(".secThree", {opacity:0, y:-15})
+        animate(".svgFour",{pathLength:0})
+        animate(".svgFive",{pathLength:0})
+        animate(".thirdOne", {opacity:0, y:-10})
+        animate(".thirdTwo", {opacity:0, y:-10})
       
     }
   },[isInView])
@@ -73,45 +80,72 @@ const Skills = () => {
         initialPosition={{y:-40}}/>
 
         <div className='flex gap-1 sm:gap-18 '>
-          <svg className=' rotate-y-180 text-foreground' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.5 0V38H105V78.5V84.5" stroke="currentColor"/>
-        </svg>
 
-        <svg className=' text-foreground' width="1" height="85" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="currentColor"/></svg>
+          <motion.svg className='rotate-y-180 text-foreground' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-        <svg className=' text-foreground' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.5 0V38H105V78.5V84.5" stroke="currentColor"/>
-        </svg>
+            <motion.path 
+            className='svgOne'
+            d="M0.5 0V38H105V78.5V84.5" stroke="currentColor"
+            initial={{pathLength:0}}/>
+          </motion.svg>
+          
+
+          <motion.svg className='text-foreground' width="1" height="85" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+            <motion.path 
+            className='svgTwo'
+            d="M0.5 0V96" stroke="currentColor"
+            initial={{pathLength:0}}/>
+          </motion.svg>
+
+          <motion.svg className=' text-foreground' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+          
+            <motion.path
+            className='svgThree'
+            d="M0.5 0V38H105V78.5V84.5" stroke="currentColor"
+            initial={{pathLength:0}}/>
+          </motion.svg>
         </div>
 
         <div className='grid grid-cols-3 gap-2 sm:gap-20 place-items-center'>
-        <SmallItem data={"JavaScript"} className='secTwo'
-        initial={{opacity:0,filter:"blur(3px)"}}
-        initialPosition={{x:120}}/>
+          <SmallItem data={"JavaScript"} className='secTwo'
+          initial={{opacity:0,filter:"blur(3px)"}}
+          initialPosition={{y:-15}}/>
 
-        <SmallItem data={"HTML5"}  className='secOne'
-        initial={{opacity:0,filter:"blur(3px)"}}
-        initialPosition={{y:-35}}/>
+          <SmallItem data={"HTML5"}  className='secOne'
+          initial={{opacity:0,filter:"blur(3px)"}}
+          initialPosition={{y:-15}}/>
 
-        <SmallItem data={'CSS3'} className='secThree'
-        initial={{opacity:0,filter:"blur(3px)"}}
-        initialPosition={{x:-150}}/>
+          <SmallItem data={'CSS3'} className='secThree'
+          initial={{opacity:0,filter:"blur(3px)"}}
+          initialPosition={{y:-15}}/>
         </div>
  
         <div className='grid grid-cols-2 gap-58 sm:gap-92'>
-          <svg className='text-foreground' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="currentColor"/></svg>
 
-        <svg className='text-foreground' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.5 0V96" stroke="currentColor"/></svg>
+          <motion.svg className='text-foreground' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <motion.path
+            className='svgFour' 
+            d="M0.5 0V96" stroke="currentColor"
+            initial={{pathLength:0}}/>
+          </motion.svg>
+
+          <motion.svg className='text-foreground' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <motion.path
+            className='svgFive'
+            d="M0.5 0V96" stroke="currentColor"
+            initial={{pathLength:0}}/>
+          </motion.svg>
         </div>
 
-        <div className='grid grid-cols-2 gap-16 sm:gap-49 place-items-start'>
+        <div className='grid grid-cols-2 gap-16 sm:gap-46 place-items-start'>
           <SmallItem data={"React"}  className='thirdOne'
-        initial={{opacity:0,filter:"blur(3px)"}}
-        initialPosition={{y:-100}}/>
+          initial={{opacity:0,filter:"blur(3px)"}}
+          initialPosition={{y:-10}}/>
 
-        <SmallItem data={'Tailwind CSS'}  className='thirdTwo'
-        initial={{opacity:0,filter:"blur(3px)"}}
-        initialPosition={{y:-100}}/>
+          <SmallItem data={'Tailwind CSS'} className='thirdTwo'
+          initial={{opacity:0,filter:"blur(3px)"}}
+          initialPosition={{y:-10}}/>
         </div>
    
       </motion.div>
