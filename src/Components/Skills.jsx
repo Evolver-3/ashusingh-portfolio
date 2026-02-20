@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import  {motion, useAnimate,useInView} from 'motion/react'
-import CharAnimate from './comp/CharAnimate'
 import AnimatedSvgPath from './comp/AnimatedSvgPath'
 import LinesAnimated from './comp/LinesAnimated'
+import BorderAnimate from './comp/BorderAnimate'
 
 const Skills = () => {
 
@@ -45,6 +45,13 @@ const Skills = () => {
       animate(".thirdTwo",{opacity:1,filter:"blur(0px)",y:0},{duration:1,ease:"easeIn"})
     ])
 
+    await animate(".animations",{opacity:1,filter:"blur(0px)",x:0},{duration:1,ease:"easeIn"})
+    await animate(".svgSix",{pathLength:1},{duration:1,ease:"easeInOut"})
+    setShimmerTwo(true)
+    
+    await animate(".motion",{opacity:1,filter:"blur(0px)",x:0},{duration:1,ease:"easeIn"})
+
+
   }
 
   useEffect(()=>{
@@ -52,37 +59,40 @@ const Skills = () => {
     if(isInView){
       AnimationTree()
     }else{
-        animate(".first", {opacity:0, y:-40})
+        animate(".first", {opacity:0, y:-40,filter:"blur(5px)"})
         animate(".svgOne",{pathLength:0})
         animate(".svgTwo",{pathLength:0})
         animate(".svgThree",{pathLength:0})
         setShimmerOne(false)
-        animate(".secOne", {opacity:0, y:-15})
-        animate(".secTwo", {opacity:0, y:-15})
-        animate(".secThree", {opacity:0, y:-15})
+        animate(".secOne", {opacity:0, y:-15,filter:"blur(5px)"})
+        animate(".secTwo", {opacity:0, y:-15,filter:"blur(5px)"})
+        animate(".secThree", {opacity:0, y:-15,filter:"blur(5px)"})
         animate(".svgFour",{pathLength:0})
         animate(".svgFive",{pathLength:0})
         setShimmerTwo(false)
-        animate(".thirdOne", {opacity:0, y:-10})
-        animate(".thirdTwo", {opacity:0, y:-10})
+        animate(".thirdOne", {opacity:0, y:-10,filter:"blur(5px)"})
+        animate(".thirdTwo", {opacity:0, y:-10,filter:"blur(5px)"})
+        animate(".animations", {opacity:0, x:-30,filter:"blur(5px)"})
+        animate(".svgSix",{pathLength:0})
+        setShimmerTwo(false)
+        animate(".motion", {opacity:0,x:-30,filter:"blur(5px)"})
+
       
     }
   },[isInView])
 
   
-  const lineColors={
-    blue:"bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200",
-    red:"bg-gradient-to-r from-red-200 via-red-400 to-red-200",
-    rose:"bg-gradient-to-r from-rose-200 via-rose-400 to-rose-200",
-
-  }
 
   return (
   <div className='w-full flex flex-col items-center justify-center my-10 h-screen'>
-    <h2 className='relative text-5xl text-foreground   '>Skills
+    <h2 className='relative text-5xl text-foreground'>Skills
     </h2>
 
-    <div className='w-full  shadow-acer border border-foreground mx-auto rounded-md mt-10 md:mx-10 flex flex-col md:flex-row justify-around h-80 '
+    <motion.div
+    initial={{opacity:0,x:-200,filter:"blur(10px)"}}
+    whileInView={{opacity:1,x:0,filter:"blur(0px)"}}
+    transition={{delay:0.2,duration:1}}
+     className='w-full shadow-acer mx-auto rounded-md mt-10 md:mx-10 flex flex-col md:flex-row justify-around h-fit bg-smallcard'
      ref={scope}
      >
 
@@ -90,8 +100,8 @@ const Skills = () => {
       className=' md:w-1/2 flex flex-col items-center justify-center py-10'>
 
 
-        <SmallItem data={"Frontend Technology"} className=' first'
-        initial={{opacity:0,filter:"blur(3px)"}}
+        <BorderAnimate textItem={"Frontend Technology"} className=' first'
+        initial={{opacity:0,filter:"blur(5px)"}}
         initialPosition={{y:-40}}/>
 
         <div className='flex gap-1 sm:gap-18 '>
@@ -103,9 +113,9 @@ const Skills = () => {
           d="M0.5 0V38H105V78.5V84.5"
           className="rotate-y-180 "
           className2='svgOne'
-          color="var(--color-red-600)"
+          color="var(--color-purple)"
           lineColor="var(--color-neutral-300)"
-          spanColor="var(--color-red-300)"
+          spanColor="var(--color-lightpurple)"
           shimmer={shimmerOne}/>
         
           <LinesAnimated
@@ -126,23 +136,23 @@ const Skills = () => {
           viewBox="0 0 106 85"
           d="M0.5 0V38H105V78.5V84.5"
           className2='svgThree'
-          color="var(--color-red-600)"
+          color="var(--color-purple)"
           lineColor="var(--color-neutral-300)"
-           spanColor="var(--color-red-300)"
+           spanColor="var(--color-lightpurple)"
           shimmer={shimmerOne}/>
         </div>
 
         <div className='grid grid-cols-3 gap-2 sm:gap-20 place-items-center'>
-          <SmallItem data={"JavaScript"} className='secTwo'
-          initial={{opacity:0,filter:"blur(3px)"}}
+          <BorderAnimate textItem={"JavaScript"} className='secTwo'
+          initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-15}}/>
 
-          <SmallItem data={"HTML5"}  className='secOne'
-          initial={{opacity:0,filter:"blur(3px)"}}
+          <BorderAnimate textItem={"HTML5"}  className='secOne'
+          initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-15}}/>
 
-          <SmallItem data={'CSS3'} className='secThree'
-          initial={{opacity:0,filter:"blur(3px)"}}
+          <BorderAnimate textItem={'CSS3'} className='secThree'
+          initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-15}}/>
         </div>
  
@@ -155,9 +165,9 @@ const Skills = () => {
           viewBox="0 0 3 44"
           d="M0.5 0V96"
           className2="svgFour"
-          color="var(--color-red-600)"
+          color="var(--color-purple)"
           lineColor="var(--color-neutral-300)"
-           spanColor="var(--color-red-300)"
+           spanColor="var(--color-lightpurple)"
           shimmer={shimmerTwo}/>
 
 
@@ -167,53 +177,54 @@ const Skills = () => {
           viewBox="0 0 3 44"
           d="M0.5 0V96"
           className2='svgFive'
-          color="var(--color-red-600)"
+          color="var(--color-purple)"
           lineColor="var(--color-neutral-300)"
-           spanColor="var(--color-red-300)"
+           spanColor="var(--color-lightpurple)"
           shimmer={shimmerTwo}/>
         </div>
 
         <div className='grid grid-cols-2 gap-16 sm:gap-46 place-items-start'>
-          <SmallItem data={"React"}  className='thirdOne'
-          initial={{opacity:0,filter:"blur(3px)"}}
+          <BorderAnimate textItem={"React"}  className='thirdOne'
+          initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-10}}/>
 
-          <SmallItem data={'Tailwind CSS'} className='thirdTwo'
-          initial={{opacity:0,filter:"blur(3px)"}}
+          <BorderAnimate textItem={'Tailwind CSS'} className='thirdTwo'
+          initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-10}}/>
         </div>
    
       </motion.div>
 
-      <div className='flex flex-col gap-30 items-center'>
+      <div className='md:w-1/2 flex items-center justify-center py-10'>
 
-        <SmallItem data={"Animations"} />
+        <BorderAnimate textItem={"Animations"} className="animations"
+        initial={{opacity:0,filter:"blur(5px)"}}
+        initialPosition={{x:-30}} />
 
-        <SmallItem data={"Framer Motion"}/>
+        <AnimatedSvgPath
+          width="150"
+          height="3"
+          viewBox="0 0 150 3"
+          d="M0 0.5H179"
+          className2="svgSix"
+          color="var(--color-purple)"
+          lineColor="var(--color-neutral-300)"
+          spanColor="var(--color-lightpurple)"
+          shimmer={shimmerTwo}/>
+
+        <BorderAnimate textItem={"Framer Motion"} className="motion"
+        initial={{opacity:0,filter:"blur(5px)"}}
+        initialPosition={{x:-30}}
+        />
       </div>
 
       <div>
 
       </div>
 
-    </div>
+    </motion.div>
   </div>
   )
 }
 
 export default Skills
-
-const SmallItem=({data,className,initialPosition})=>{
-
-
-  return(
-    <motion.div className={`inline-block text-foreground bg-card rounded-md px-2 py-1 border border-bg ${className}`}
-    initial={{
-      opacity:0,
-      filter:"blur(3px)",
-      ...(initialPosition || {})
-    }}>
-      <CharAnimate text={data}/>
-    </motion.div>
-  )
-}

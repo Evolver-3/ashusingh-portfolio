@@ -7,6 +7,7 @@ import Container from './Components/Container'
 import {motion} from 'motion/react'
 import Skills from './Components/Skills'
 import AnimatedSvgPath from './Components/comp/AnimatedSvgPath'
+import BorderAnimate from './Components/comp/BorderAnimate'
 
 const App = () => {
   const [dark,setDark]=useState(
@@ -36,7 +37,7 @@ const App = () => {
         <Body/>
         <Projects dark={dark}/>
         <Skills/>
-        <AnimatedSvgPath/>
+        <BorderAnimate/>
       </Container>
     </motion.div>
   )

@@ -6,13 +6,16 @@ body,html{
 }
 
 :root{
-  --background:white;
+  --background:var(--color-neutral-100);
   --foreground:black;
   --card:white;
   --nav:oklch(86.799% 0.01413 258.444);
   --bottom:oklch(87.2% 0.01 258.338);
   --btn:var(--color-neutral-800);
   --bdr:oklch(81.294% 0.04946 255.177);
+  --smallcard:oklch(92.2% 0 0);
+
+  
   
  
 }
@@ -24,6 +27,7 @@ html.dark{
   --bottom:oklch(20.8% 0.042 265.755);
   --btn:var(--color-neutral-400);
   --bdr:oklch(70.9% 0.01 56.259);
+  --smallcard:oklch(20.8% 0.042 265.755);
 }
 
 @theme inline {
@@ -38,5 +42,10 @@ html.dark{
   --color-bottom:var(--bottom);
   --color-btn:var(--btn);
   --color-bdr:var(--bdr);
+  --color-golden:oklch(76.9% 0.188 70.08);
+  --color-pup:oklch(59.2% 0.249 0.584);
+  --color-purple:oklch(43.2% 0.232 292.759);
+  --color-lightpurple:oklch(60.6% 0.25 292.717);
+  --color-smallcard:var(--smallcard)
 
 }
