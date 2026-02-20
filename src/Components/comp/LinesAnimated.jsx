@@ -1,7 +1,7 @@
 import React, { useId, useState } from 'react'
 import {motion} from 'motion/react'
 
-const AnimatedSvgPath = ({width,height,viewBox,d,color,className,lineColor,className2,shimmer,spanColor}) => {
+const LinesAnimated = ({width,height,viewBox,d,color,className,lineColor,className2,shimmer,spanColor}) => {
 
 
   const gradientId=useId()
@@ -14,13 +14,13 @@ const AnimatedSvgPath = ({width,height,viewBox,d,color,className,lineColor,class
           <motion.linearGradient
           id={gradientId}
           gradientUnits="userSpaceOnUse"
-          x1="-100%"
-          y1="0%"
+          x1="0%"
+          y1="-100%"
             
           animate={
             shimmer && {
-              x1:["-100%","100%"],
-              x2:["0%","200%"]
+              y1:["-100%","200%"],
+              y2:["0%","300%"]
             }
           }
           transition={{duration:2,ease:"linear",repeat:Infinity}}>
@@ -59,4 +59,4 @@ const AnimatedSvgPath = ({width,height,viewBox,d,color,className,lineColor,class
   )
 }
 
-export default AnimatedSvgPath
+export default LinesAnimated

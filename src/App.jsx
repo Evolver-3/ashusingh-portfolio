@@ -6,6 +6,7 @@ import Dark from './Components/DarkMode/Dark'
 import Container from './Components/Container'
 import {motion} from 'motion/react'
 import Skills from './Components/Skills'
+import AnimatedSvgPath from './Components/comp/AnimatedSvgPath'
 
 const App = () => {
   const [dark,setDark]=useState(
@@ -35,6 +36,7 @@ const App = () => {
         <Body/>
         <Projects dark={dark}/>
         <Skills/>
+        <AnimatedSvgPath/>
       </Container>
     </motion.div>
   )

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import  {motion, useAnimate,useInView} from 'motion/react'
 import CharAnimate from './comp/CharAnimate'
+import AnimatedSvgPath from './comp/AnimatedSvgPath'
+import LinesAnimated from './comp/LinesAnimated'
 
 const Skills = () => {
 
@@ -8,6 +10,8 @@ const Skills = () => {
   const [scope,animate]=useAnimate()
 
   const isInView=useInView(scope,{margin:"100px"})
+  const [shimmerOne,setShimmerOne]=useState(false)
+  const [shimmerTwo,setShimmerTwo]=useState(false)
 
 
   const AnimationTree=async()=>{
@@ -18,9 +22,10 @@ const Skills = () => {
       animate(".svgTwo",{pathLength:1},{duration:1,ease:"easeInOut"}),
       animate(".svgThree",{pathLength:1},{duration:1,ease:"easeInOut"})
     ])
+    setShimmerOne(true)
 
     await Promise.all([
-      animate(".secOne",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,duration:1,ease:"easeIn"}),
+      animate(".secOne",{opacity:1,filter:"blur(0px)",y:0},{duration:1,ease:"easeIn"}),
       
       animate(".secTwo",{opacity:1,filter:"blur(0px)",y:0},{duration:1,ease:"easeIn"}),
       
@@ -31,10 +36,11 @@ const Skills = () => {
       animate(".svgFour",{pathLength:1},{duration:1,ease:"easeInOut"}),
       animate(".svgFive",{pathLength:1},{duration:1,ease:"easeInOut"})
     ])
+    setShimmerTwo(true)
 
     await Promise.all([
 
-      animate(".thirdOne",{opacity:1,filter:"blur(0px)",y:0},{delay:0.3,duration:1,ease:"easeIn"}),
+      animate(".thirdOne",{opacity:1,filter:"blur(0px)",y:0},{duration:1,ease:"easeIn"}),
 
       animate(".thirdTwo",{opacity:1,filter:"blur(0px)",y:0},{duration:1,ease:"easeIn"})
     ])
@@ -50,17 +56,26 @@ const Skills = () => {
         animate(".svgOne",{pathLength:0})
         animate(".svgTwo",{pathLength:0})
         animate(".svgThree",{pathLength:0})
+        setShimmerOne(false)
         animate(".secOne", {opacity:0, y:-15})
         animate(".secTwo", {opacity:0, y:-15})
         animate(".secThree", {opacity:0, y:-15})
         animate(".svgFour",{pathLength:0})
         animate(".svgFive",{pathLength:0})
+        setShimmerTwo(false)
         animate(".thirdOne", {opacity:0, y:-10})
         animate(".thirdTwo", {opacity:0, y:-10})
       
     }
   },[isInView])
 
+  
+  const lineColors={
+    blue:"bg-gradient-to-r from-blue-200 via-blue-400 to-blue-200",
+    red:"bg-gradient-to-r from-red-200 via-red-400 to-red-200",
+    rose:"bg-gradient-to-r from-rose-200 via-rose-400 to-rose-200",
+
+  }
 
   return (
   <div className='w-full flex flex-col items-center justify-center my-10 h-screen'>
@@ -81,30 +96,40 @@ const Skills = () => {
 
         <div className='flex gap-1 sm:gap-18 '>
 
-          <motion.svg className='rotate-y-180 text-foreground' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <AnimatedSvgPath
+          width="106"
+          height="85"
+          viewBox="0 0 106 85"
+          d="M0.5 0V38H105V78.5V84.5"
+          className="rotate-y-180 "
+          className2='svgOne'
+          color="var(--color-red-600)"
+          lineColor="var(--color-neutral-300)"
+          spanColor="var(--color-red-300)"
+          shimmer={shimmerOne}/>
+        
+          <LinesAnimated
+          width="3"
+          height="85"
+          viewBox="0 0 3 85"
+          d="M0.5 0V96"
+          className2='svgTwo'
+          color="var(--color-yellow-600)"
+          lineColor="var(--color-neutral-300)"
+           spanColor="var(--color-yellow-300)"
+          shimmer={shimmerOne}/>
 
-            <motion.path 
-            className='svgOne'
-            d="M0.5 0V38H105V78.5V84.5" stroke="currentColor"
-            initial={{pathLength:0}}/>
-          </motion.svg>
-          
 
-          <motion.svg className='text-foreground' width="1" height="85" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-            <motion.path 
-            className='svgTwo'
-            d="M0.5 0V96" stroke="currentColor"
-            initial={{pathLength:0}}/>
-          </motion.svg>
-
-          <motion.svg className=' text-foreground' width="106" height="85" viewBox="0 0 106 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-          
-            <motion.path
-            className='svgThree'
-            d="M0.5 0V38H105V78.5V84.5" stroke="currentColor"
-            initial={{pathLength:0}}/>
-          </motion.svg>
+          <AnimatedSvgPath
+          width="106"
+          height="85"
+          viewBox="0 0 106 85"
+          d="M0.5 0V38H105V78.5V84.5"
+          className2='svgThree'
+          color="var(--color-red-600)"
+          lineColor="var(--color-neutral-300)"
+           spanColor="var(--color-red-300)"
+          shimmer={shimmerOne}/>
         </div>
 
         <div className='grid grid-cols-3 gap-2 sm:gap-20 place-items-center'>
@@ -123,19 +148,29 @@ const Skills = () => {
  
         <div className='grid grid-cols-2 gap-58 sm:gap-92'>
 
-          <motion.svg className='text-foreground' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <motion.path
-            className='svgFour' 
-            d="M0.5 0V96" stroke="currentColor"
-            initial={{pathLength:0}}/>
-          </motion.svg>
 
-          <motion.svg className='text-foreground' width="1" height="44" viewBox="0 0 1 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <motion.path
-            className='svgFive'
-            d="M0.5 0V96" stroke="currentColor"
-            initial={{pathLength:0}}/>
-          </motion.svg>
+          <LinesAnimated
+          width="3"
+          height="44"
+          viewBox="0 0 3 44"
+          d="M0.5 0V96"
+          className2="svgFour"
+          color="var(--color-red-600)"
+          lineColor="var(--color-neutral-300)"
+           spanColor="var(--color-red-300)"
+          shimmer={shimmerTwo}/>
+
+
+          <LinesAnimated
+          width="3"
+          height="44"
+          viewBox="0 0 3 44"
+          d="M0.5 0V96"
+          className2='svgFive'
+          color="var(--color-red-600)"
+          lineColor="var(--color-neutral-300)"
+           spanColor="var(--color-red-300)"
+          shimmer={shimmerTwo}/>
         </div>
 
         <div className='grid grid-cols-2 gap-16 sm:gap-46 place-items-start'>
