@@ -7,7 +7,7 @@ import Container from './Components/Container'
 import {motion} from 'motion/react'
 import Skills from './Components/Skills'
 import Footer from './Components/Footer'
-import Git from './Components/Git'
+
 
 
 const App = () => {
@@ -37,10 +37,8 @@ const App = () => {
         <Dark dark={dark} setDark={setDark} />
         <Body/>
         <Projects dark={dark}/>
-
-
         <Skills dark={dark} />
-        <Git/>
+
         <Footer/>
     
       </Container>
