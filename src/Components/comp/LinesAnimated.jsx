@@ -38,7 +38,7 @@ const LinesAnimated = ({width,height,viewBox,d,color,className,lineColor,classNa
         d={d}
         stroke={lineColor}
         strokeWidth="2"
-        strokeLinecap="round"
+        strokeLinecap="butt"
         className={className2}
         initial={{pathLength:0}}/>
 
@@ -47,7 +47,7 @@ const LinesAnimated = ({width,height,viewBox,d,color,className,lineColor,classNa
           d={d}
           stroke={`url(#${gradientId})`}
           strokeWidth="2"
-          strokeLinecap="round"
+          strokeLinecap="butt"
           style={{
             filter:"drop-shadow(0 0 0px white)"
           }}

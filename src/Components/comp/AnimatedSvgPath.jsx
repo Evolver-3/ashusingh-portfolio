@@ -25,12 +25,11 @@ const AnimatedSvgPath = ({width,height,viewBox,d,color,className,lineColor,class
           }
           transition={{duration:2,ease:"linear",repeat:Infinity}}>
             <stop offset="0%" stopColor="transparent"/>
-            <stop offset="30%" stopColor={spanColor}/>
+            <stop offset="40%" stopColor={spanColor}/>
             <stop offset="50%" stopColor={color}/>
-            <stop offset="70%" stopColor={spanColor}/>
+            <stop offset="60%" stopColor={spanColor}/>
             <stop offset="100%" stopColor='transparent'/>
           </motion.linearGradient>
-
         </defs>
 
 
@@ -38,7 +37,7 @@ const AnimatedSvgPath = ({width,height,viewBox,d,color,className,lineColor,class
         d={d}
         stroke={lineColor}
         strokeWidth="2"
-        strokeLinecap="round"
+        strokeLinecap="butt"
         className={className2}
         initial={{pathLength:0}}/>
 
@@ -47,7 +46,7 @@ const AnimatedSvgPath = ({width,height,viewBox,d,color,className,lineColor,class
           d={d}
           stroke={`url(#${gradientId})`}
           strokeWidth="2"
-          strokeLinecap="round"
+          strokeLinecap="butt"
           style={{
             filter:"drop-shadow(0 0 0px white)"
           }}
