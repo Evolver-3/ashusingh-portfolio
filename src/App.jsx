@@ -6,8 +6,9 @@ import Dark from './Components/DarkMode/Dark'
 import Container from './Components/Container'
 import {motion} from 'motion/react'
 import Skills from './Components/Skills'
-import AnimatedSvgPath from './Components/comp/AnimatedSvgPath'
-import BorderAnimate from './Components/comp/BorderAnimate'
+import Footer from './Components/Footer'
+import Git from './Components/Git'
+
 
 const App = () => {
   const [dark,setDark]=useState(
@@ -27,7 +28,7 @@ const App = () => {
   return (
     <motion.div 
 
-    className=' relative w-full bg-card'>
+    className='w-full bg-card'>
 
       <Navbar/>
       <Container>
@@ -36,8 +37,12 @@ const App = () => {
         <Dark dark={dark} setDark={setDark} />
         <Body/>
         <Projects dark={dark}/>
-        <Skills/>
-        <BorderAnimate/>
+
+
+        <Skills dark={dark} />
+        <Git/>
+        <Footer/>
+    
       </Container>
     </motion.div>
   )
