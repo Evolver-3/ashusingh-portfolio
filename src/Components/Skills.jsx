@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import  {motion, useAnimate,useInView} from 'motion/react'
+import  {JSAnimation, motion, useAnimate,useInView} from 'motion/react'
 import AnimatedSvgPath from './comp/AnimatedSvgPath'
 import LinesAnimated from './comp/LinesAnimated'
 import BorderAnimate from './comp/BorderAnimate'
+import  { Css3Wordmark, Html5, Javascript, ReactDark, ReactLight, Tailwindcss } from '../assets/index.jsx'
+import HoveredEffect from './HoveredEffect.jsx'
 
-const Skills = () => {
+const Skills = ({dark}) => {
 
 
   const [scope,animate]=useAnimate()
@@ -46,7 +48,7 @@ const Skills = () => {
     ])
 
     await animate(".animations",{opacity:1,filter:"blur(0px)",x:0},{duration:1,ease:"easeIn"})
-    await animate(".svgSix",{pathLength:1},{duration:1,ease:"easeInOut"})
+    await animate(".svgSix",{pathLength:1},{duration:1,ease:"easeInOut",delay:0.3})
     setShimmerTwo(true)
     
     await animate(".motion",{opacity:1,filter:"blur(0px)",x:0},{duration:1,ease:"easeIn"})
@@ -72,19 +74,21 @@ const Skills = () => {
         setShimmerTwo(false)
         animate(".thirdOne", {opacity:0, y:-10,filter:"blur(5px)"})
         animate(".thirdTwo", {opacity:0, y:-10,filter:"blur(5px)"})
-        animate(".animations", {opacity:0, x:-30,filter:"blur(5px)"})
+        animate(".animations", {opacity:0, x:-10,filter:"blur(5px)"})
         animate(".svgSix",{pathLength:0})
         setShimmerTwo(false)
-        animate(".motion", {opacity:0,x:-30,filter:"blur(5px)"})
+        animate(".motion", {opacity:0,x:-10,filter:"blur(5px)"})
 
       
     }
   },[isInView])
 
-  
-
   return (
-  <div className='w-full flex flex-col items-center justify-center my-10 h-screen'>
+
+
+  <div className='w-full flex flex-col items-center justify-center my-10 
+ 
+  '>
     <h2 className='relative text-5xl text-foreground'>Skills
     </h2>
 
@@ -100,7 +104,8 @@ const Skills = () => {
       className=' md:w-1/2 flex flex-col items-center justify-center py-10'>
 
 
-        <BorderAnimate textItem={"Frontend Technology"} className=' first'
+        <BorderAnimate textItem={"Frontend Technology"} 
+        className=' first'
         initial={{opacity:0,filter:"blur(5px)"}}
         initialPosition={{y:-40}}/>
 
@@ -143,15 +148,20 @@ const Skills = () => {
         </div>
 
         <div className='grid grid-cols-3 gap-2 sm:gap-20 place-items-center'>
-          <BorderAnimate textItem={"JavaScript"} className='secTwo'
+          <BorderAnimate textItem={"JavaScript"}
+          imageSpan={<Javascript/>}
+          className='secTwo'
           initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-15}}/>
 
           <BorderAnimate textItem={"HTML5"}  className='secOne'
+          imageSpan={<Html5/>} 
           initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-15}}/>
 
-          <BorderAnimate textItem={'CSS3'} className='secThree'
+          <BorderAnimate textItem={'CSS3'}
+          imageSpan={<Css3Wordmark/>} 
+          className='secThree'
           initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-15}}/>
         </div>
@@ -185,10 +195,11 @@ const Skills = () => {
 
         <div className='grid grid-cols-2 gap-16 sm:gap-46 place-items-start'>
           <BorderAnimate textItem={"React"}  className='thirdOne'
+          imageSpan={dark? <ReactDark/> : <ReactLight/>} 
           initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-10}}/>
 
-          <BorderAnimate textItem={'Tailwind CSS'} className='thirdTwo'
+          <BorderAnimate textItem={'Tailwind CSS'} imageSpan={<Tailwindcss/>} className='thirdTwo'
           initial={{opacity:0,filter:"blur(5px)"}}
           initialPosition={{y:-10}}/>
         </div>
@@ -199,7 +210,7 @@ const Skills = () => {
 
         <BorderAnimate textItem={"Animations"} className="animations"
         initial={{opacity:0,filter:"blur(5px)"}}
-        initialPosition={{x:-30}} />
+        initialPosition={{x:-10}} />
 
         <AnimatedSvgPath
           width="150"
@@ -214,7 +225,7 @@ const Skills = () => {
 
         <BorderAnimate textItem={"Framer Motion"} className="motion"
         initial={{opacity:0,filter:"blur(5px)"}}
-        initialPosition={{x:-30}}
+        initialPosition={{x:-10}}
         />
       </div>
 
@@ -224,6 +235,8 @@ const Skills = () => {
 
     </motion.div>
   </div>
+
+
   )
 }
 
