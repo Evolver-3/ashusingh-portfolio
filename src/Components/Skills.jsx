@@ -4,7 +4,6 @@ import AnimatedSvgPath from './comp/AnimatedSvgPath'
 import LinesAnimated from './comp/LinesAnimated'
 import BorderAnimate from './comp/BorderAnimate'
 import  { Css3Wordmark, Html5, Javascript, ReactDark, ReactLight, Tailwindcss } from '../assets/index.jsx'
-import HoveredEffect from './HoveredEffect.jsx'
 
 const Skills = ({dark}) => {
 
