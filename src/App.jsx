@@ -7,6 +7,7 @@ import Container from './Components/Container'
 import {motion} from 'motion/react'
 import Skills from './Components/Skills'
 import Footer from './Components/Footer'
+import Hero from './Components/Hero'
 
 
 
@@ -32,7 +33,7 @@ const App = () => {
 
       <Navbar/>
       <Container>
-      
+      <Hero/>
         
         <Dark dark={dark} setDark={setDark} />
         <Body/>
@@ -40,6 +41,7 @@ const App = () => {
         <Skills dark={dark} />
 
         <Footer/>
+        
     
       </Container>
     </motion.div>

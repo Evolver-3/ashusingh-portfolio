@@ -23,6 +23,7 @@ border: 1px solid rgba(185, 155, 155, 0.3); */
   --btn:var(--color-neutral-800);
   --bdr:oklch(81.294% 0.04946 255.177);
   --smallcard:oklch(92.2% 0 0);
+  --fullColor:oklch(51.1% 0.096 186.391);
 
 
   
@@ -38,6 +39,7 @@ html.dark{
   --btn:var(--color-neutral-400);
   --bdr:oklch(70.9% 0.01 56.259);
   --smallcard:oklch(20.8% 0.042 265.755);
+  --fullColor:oklch(48.8% 0.243 264.376);
 }
 
 @theme inline {
@@ -57,6 +59,7 @@ html.dark{
   --color-purple:oklch(43.2% 0.232 292.759);
   --color-lightpurple:oklch(60.6% 0.25 292.717);
   --color-smallcard:var(--smallcard);
+  --color-fullColor:var(--fullColor);
   
 
 
