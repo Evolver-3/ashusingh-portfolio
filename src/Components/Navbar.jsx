@@ -31,43 +31,45 @@ const Navbar = () => {
 
 
   useMotionValueEvent(scrollY,"change",(latest)=>{
-   if(latest > 15){
+   if(latest > 15 && !scrolled){
     setScrolled(true);
-   }else{
+   }else if(latest <=15 && scrolled){
     setScrolled(false)
    }
   })
 
   return (
     <Container>
-
-    <motion.nav
-    animate={{
-       boxShadow:scrolled ? "var(--shadow-acer)" : "none",
-       width:scrolled ? "80%":"100%",
-       y:scrolled ? 10:0,
-       borderRadius:scrolled? "10rem":"0"
-    }}
-    transition={{
-      duration:.3,
-      ease:"easeInOut"
-    }}
+      
+      <motion.nav
+      layout
+      initial={{opacity:0,y:-80}}
+      animate={{
+        opacity:1,
+        y:0,
+        boxShadow:scrolled ? "var(--shadow-acer)" : "none",
+        width:scrolled ? "0.90":"1",
+        y:scrolled ? 10:0,
+        borderRadius:scrolled? "10rem":"0"
+        }}
+        transition={{
+        duration:.3,
+        ease:"easeInOut"
+        }}
     
-    className=' fixed z-50 inset-x-0 top-0 mx-auto max-w-7xl flex items-center justify-between p-2 bg-nav md:px-10'>
+      className=' fixed z-50 inset-x-0 top-0 mx-auto max-w-7xl flex items-center justify-between p-2 bg-nav md:px-10'>
 
-      <img className='w-10 h-10 rounded-full' src="/profile.jpg" height="100" width="100" alt="profile"></img>
+        <img className='w-10 h-10 rounded-full' src="/profile.jpg" height="100" width="100" alt="profile"></img>
 
+         <div className='flex items-center'>
 
+          {navItems.map((item,index)=>(
 
-      <div className='flex items-center'>
-
-        {navItems.map((item,index)=>(
-
-          <a href={item.href} key={index} className='text-sm text-foreground relative px-2 py-1 hover:text-background'
+            <a href={item.href} key={index} className='text-sm text-foreground relative px-2 py-1 hover:text-background'
           onMouseEnter={()=>setHovered(index)}
           onMouseLeave={()=>setHovered(null)}>
 
-            { hovered ===index &&
+            {hovered ===index &&
               (<motion.span layoutId='hovered-span' className='h-full w-full absolute inset-0 rounded-md bg-neutral-100 dark:bg-gray-500'>
               </motion.span>)
             }
@@ -79,6 +81,7 @@ const Navbar = () => {
       </div>
       
     </motion.nav>
+
     </Container>
    
   )
