@@ -8,6 +8,7 @@ import {motion} from 'motion/react'
 import Skills from './Components/Skills'
 import Footer from './Components/Footer'
 import Hero from './Components/Hero'
+import Contact from './Components/Contact'
 
 
 
@@ -36,11 +37,12 @@ const App = () => {
       <Hero/>
         
         <Dark dark={dark} setDark={setDark} />
-        <Body/>
+    
         <Projects dark={dark}/>
         <Skills dark={dark} />
 
         <Footer/>
+        
         
     
       </Container>
