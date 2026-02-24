@@ -9,6 +9,7 @@ import Skills from './Components/Skills'
 import Footer from './Components/Footer'
 import Hero from './Components/Hero'
 import Contact from './Components/Contact'
+import Education from './Components/Education'
 
 
 
@@ -30,13 +31,18 @@ const App = () => {
   return (
     <motion.div 
 
-    className='w-full bg-card'>
+    className='w-full bg-no-repeat bg-conic'
+    style={{
+      backgroundImage:`url(${dark ? "/backapp.jpg" : "/lightapp.jpg"})`
+    }}>
 
       <Navbar/>
       <Container>
-      <Hero/>
-        
-        <Dark dark={dark} setDark={setDark} />
+      
+      <Dark dark={dark} setDark={setDark} />
+      <Hero dark={dark}/>
+      <Education/>
+
     
         <Projects dark={dark}/>
         <Skills dark={dark} />

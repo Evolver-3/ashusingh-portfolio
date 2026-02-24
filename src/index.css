@@ -5,14 +5,17 @@ body,html{
   
 }
 
-/* 
+.flamenco-light {
+  font-family: "Flamenco", system-ui;
+  font-weight: 300;
+  font-style: normal;
+}
 
-background: rgba(185, 155, 155, 0.18);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(4.7px);
--webkit-backdrop-filter: blur(4.7px);
-border: 1px solid rgba(185, 155, 155, 0.3); */
+.flamenco-regular {
+  font-family: "Flamenco", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 
 :root{
   --background:var(--color-neutral-100);

@@ -1,7 +1,7 @@
 import React from 'react'
 import {motion} from 'motion/react'
 
-const Hero = () => {
+const Hero = ({dark}) => {
 
   const containerVariant={
     hidden:{},
@@ -12,12 +12,16 @@ const Hero = () => {
       }
     }
   }
-
- 
-  
   return (
-    <div className='w-full bg-background my-25 md:my-45 '>
-      <div className='flex flex-col md:flex-row items-center justify-between overflow-hidden sm:gap-5 '>
+    <div className='relative w-full  py-25 md:py-65 '>
+
+      <div className='absolute inset-0 bg-no-repeat bg-cover'
+      style={{
+        backgroundImage:`url(${dark ?"/darkBackground.jpg" :"/pinkBackground.jpg"})`
+      }}></div>
+
+
+      <div className='flex flex-col md:flex-row items-center justify-between overflow-hidden sm:gap-8 md:mx-30'>
 
         <motion.div className='md:w-1/2 flex flex-col gap-5 sm:gap-8 text-foreground order-2 md:order-1 items-center sm:items-baseline sm:ml-10 justify-center'
         variants={containerVariant}
