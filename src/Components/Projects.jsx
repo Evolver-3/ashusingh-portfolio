@@ -14,6 +14,20 @@ const projectCards=[
       language:["React","Javascript","Tailwindcss","Framer Motion"]
     }
 
+  },
+  {
+    id:2,
+    imgLight:"BMW-webu.png",
+    imgDark:"BMW-webu.png",
+    name:"BMW Car Website",
+    text:"A modern approach to the BMW classic website, with a sleek design and user-friendly interface. The website features a responsive layout, allowing users to easily navigate and explore the various BMW models and services on any device.",
+    year:2026,
+    live:"https://motioncarwebu-vercel.vercel.app/",
+    git:"https://github.com/Evolver-3/motioncarwebu-vercel.git",
+    Stack:{
+      language:["React","Javascript","Tailwindcss","Framer Motion"]
+    }
+
   }
 ] 
 
