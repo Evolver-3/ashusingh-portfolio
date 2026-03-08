@@ -23,7 +23,7 @@ const Education = () => {
       <div className='w-full px-10 flex flex-col md:flex-row gap-20 sm:gap-10 my-15'>
 
         {eduCards.map((card)=>(
-          <div key={card.id} className='w-full rounded-3xl bg-secondary p-5 flex items-center gap-5 px-10 sm:px-5'>
+          <div key={card.id} className='w-full rounded-3xl bg-bdr p-5 flex items-center gap-5 px-10 sm:px-5'>
             
             <img src={'/aktu logo.png'} alt='aktu logo' className='size-20 rounded-full '/>
 

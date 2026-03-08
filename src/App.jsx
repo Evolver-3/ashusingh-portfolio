@@ -31,10 +31,8 @@ const App = () => {
   return (
     <motion.div 
 
-    className='w-full bg-no-repeat bg-conic'
-    style={{
-      backgroundImage:`url(${dark ? "/backapp.jpg" : "/lightapp.jpg"})`
-    }}>
+    className='w-full bg-smallcard'
+   >
 
       <Navbar/>
       <Container>
@@ -46,6 +44,8 @@ const App = () => {
     
         <Projects dark={dark}/>
         <Skills dark={dark} />
+
+        <Contact/>
 
         <Footer/>
         
