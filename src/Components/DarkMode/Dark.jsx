@@ -2,7 +2,7 @@
 const Dark = ({dark,setDark,className=''}) => {
  
   return (
-    <div className={`fixed z-50 md:right-30 md:top-5 top-6 right-64 ${className}`}>
+    <div className={`absolute z-50  fixed md:right-30 md:top-5 bottom-10 right-10 ${className}`}>
       <button onClick={()=>setDark(!dark)}
         className="shadow-acer rounded-xl p-1">
         {dark?<svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" className="text-yellow-400">

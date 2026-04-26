@@ -85,7 +85,8 @@ const Skills = ({dark}) => {
   return (
 
 
-  <div className='w-full flex flex-col items-center justify-center my-10 '>
+  <div className='w-full flex flex-col items-center justify-center my-10 '
+  id="skills">
 
     <h2 className='relative text-5xl text-foreground'>Skills & Tools
     </h2>

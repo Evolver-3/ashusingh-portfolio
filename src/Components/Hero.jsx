@@ -23,7 +23,7 @@ const Hero = ({dark}) => {
 
       <div className='flex flex-col md:flex-row items-center justify-between overflow-hidden sm:gap-8 md:mx-30'>
 
-        <motion.div className='md:w-1/2 flex flex-col gap-5 sm:gap-8 text-foreground order-2 md:order-1 items-center sm:items-baseline sm:ml-10 justify-center'
+        <motion.div className='md:w-1/2 flex flex-col gap-5 sm:gap-8 text-foreground order-2 md:order-1 text-center md:text-normal items-center sm:items-baseline sm:ml-10 justify-center'
         variants={containerVariant}
         initial="hidden"
         whileInView="show"
@@ -55,10 +55,8 @@ const Hero = ({dark}) => {
           </HideOut>
         </motion.div>
 
-        <div className='order-1 md:order-2 size-70 bg-red-500 rounded-full'>
-        
-        
-
+        <div className='z-10 order-1 md:order-2 size-50  rounded-full'>
+        {/* <img src='profile.png' alt='profile-picture'/> */}
         </div>
       
       </div>

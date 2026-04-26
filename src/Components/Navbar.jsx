@@ -12,15 +12,15 @@ const Navbar = () => {
     },
     {
       title:"Projects",
-      href:'/projects'
+      href:'#projects'
     },
     {
       title:"Contact",
       href:"/contact"
     },
     {
-      title:"Blog",
-      href:'/blog'
+      title:"Skill",
+      href:'#skills'
     }
   ];
 
@@ -59,7 +59,7 @@ const Navbar = () => {
     
       className=' fixed z-50 inset-x-0 top-0 mx-auto max-w-7xl flex items-center justify-between p-2 bg-nav md:px-10'>
 
-        <img className='w-10 h-10 rounded-full' src="/profile.jpg" height="100" width="100" alt="profile"></img>
+        <img className='w-10 h-10 rounded-full' src="/profile.png" height="100" width="100" alt="profile"></img>
 
          <div className='flex items-center'>
 

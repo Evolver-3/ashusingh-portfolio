@@ -45,7 +45,7 @@ const App = () => {
         <Projects dark={dark}/>
         <Skills dark={dark} />
 
-        <Contact/>
+        {/* <Contact/> */}
 
         <Footer/>
         

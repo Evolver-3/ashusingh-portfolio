@@ -1,6 +1,5 @@
 
 import React from 'react'
-import PhoneCard from './comp/PhoneCard'
 const Contact = () => {
   return (
     <div className='flex flex-col items-center justify-center py-10 '>
