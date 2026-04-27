@@ -13,6 +13,12 @@ const eduCards=[
     text:"Bachelor's of Computer Applications",
     year:`2020-2023`,
     college:"Dr. Virendra Swarup Institute of Computer Studies"
+  },
+  {
+    id:3,
+    text:"Intermediate",
+    year:`2018`,
+    college:"Guru Nanak Public School"
   }
 ]
 

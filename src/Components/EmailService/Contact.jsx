@@ -43,7 +43,9 @@ const Contact = () => {
  
 
   return (
-    <div className='flex flex-col items-center justify-center py-10 px-10 relative w-full md:px-50'>
+    <div
+    id='contact'
+    className='flex flex-col items-center justify-center py-10 px-10 relative w-full md:px-50'>
 
       {
         errorMessage && (

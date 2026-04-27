@@ -16,7 +16,7 @@ const Navbar = () => {
     },
     {
       title:"Contact",
-      href:"/contact"
+      href:"#contact"
     },
     {
       title:"Skill",
@@ -46,7 +46,6 @@ const Navbar = () => {
       initial={{opacity:0,y:-80}}
       animate={{
         opacity:1,
-        y:0,
         boxShadow:scrolled ? "var(--shadow-acer)" : "none",
         width:scrolled ? "0.90":"1",
         y:scrolled ? 10:0,

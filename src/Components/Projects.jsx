@@ -1,9 +1,17 @@
+import { useState } from 'react'
 import Container from './Container'
+import { motion } from 'motion/react'
 
 const projectCards=[
   {
     id:1,
-    imgLight:"Finta-light.png",
+    imgLight:[
+      "Finta-light.png",
+      "scam1.jpg",
+      "Finta-light.png",
+      "Finta-light.png",
+      "Finta-light.png"
+    ],
     imgDark:"finta-dark.png",
     name:"Finta Ui",
     text:"Finta Ui is based on the original Finta, which is a tax related website. We have added dark mode and also the site is responsive on most of the devices.",
@@ -47,6 +55,10 @@ const projectCards=[
 
 const Projects = ({dark}) => {
 
+  const [tabOpen,setTabOpen]=useState({})
+
+  const [btnClicked,setBtnClicked]=useState({})
+
 
   return (
 
@@ -54,9 +66,9 @@ const Projects = ({dark}) => {
     id='projects'>
 
       <h2 className='text-[40px] text-foreground font-semibold'>My Projects</h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl md:mx-auto px-4' >
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-y-10 max-w-6xl md:gap-x-30  md:gap-y-20' >
         
-        {projectCards.map((card,i)=>(
+        {/* {projectCards.map((card,i)=>(
           <div className='w-full shadow-acer border border-bdr rounded-md bg-bottom' key={card.id}>
 
             <img src={dark? card.imgDark:card.imgLight} alt={card.name} className='object-cover aspect-video rounded-md' />
@@ -88,7 +100,67 @@ const Projects = ({dark}) => {
 
             </div>
           </div>
+        ))} */}
+
+        {projectCards.map((card,i)=>(
+          <div key={i}
+          className='flex flex-col'>
+            <div className='relative size-100 rounded-full bg-slate-200 shadow-weird flex items-center justify-center'>
+              <img
+              className='w-64 h-70  object-fit rounded-sm shadow-xl shadow-neutral-300 mt-10'
+              src={card.imgLight[tabOpen[card.id]  || 0]} alt="project-snaps"/>
+
+              <div 
+              className='absolute  size-110 border-60  [clip-path:polygon(0_30%,100%_30%,100%_100%,0_100%)] border-slate-500 rounded-full shadow-finta '>
+
+              </div>
+
+
+                
+                <motion.button
+                 layoutId
+                onClick={()=>{setTabOpen(prev=>({...prev,[card.id]:0}));
+                          setBtnClicked(prev=>({...prev,[card.id]:0}))}}
+                className=" right-0 rotate-button z-50 ">1</motion.button>
+
+                <button
+                onClick={()=>{setTabOpen(prev=>({...prev,[card.id]:1}));
+                          setBtnClicked(prev=>({...prev,[card.id]:1}))}}
+                className=" left-0 rotate-button">2</button>
+
+                <button
+                onClick={()=>{setTabOpen(prev=>({...prev,[card.id]:2}));
+                          setBtnClicked(prev=>({...prev,[card.id]:2}))}}
+                className="bottom-20  right-6 rotate-button">3</button>
+
+                <button
+                onClick={()=>{setTabOpen(prev=>({...prev,[card.id]:3}));
+                          setBtnClicked(prev=>({...prev,[card.id]:3}))}}
+                className=" bottom-20 left-6 rotate-button">4</button>
+
+                <button
+                onClick={()=>{setTabOpen(prev=>({...prev,[card.id]:4}));
+                          setBtnClicked(prev=>({...prev,[card.id]:4}))}}
+                className=" bottom-5 right-23 rotate-button">5</button>
+
+                <button
+                onClick={()=>{setTabOpen(prev=>({...prev,[card.id]:5}));
+                          setBtnClicked(prev=>({...prev,[card.id]:5}))}}
+                className=" bottom-5 left-23  rotate-button">6</button>
+
+                {btnClicked[card.id] !== undefined &&(
+                  <motion.span
+                  layoutId
+                  className='h-10 w-10 absolute inset-0 z-20 rounded-md bg-neutral-500'
+                  >gg
+
+                  </motion.span>
+                )}
+              
+            </div>
+          </div>
         ))}
+
 
       </div>
       
