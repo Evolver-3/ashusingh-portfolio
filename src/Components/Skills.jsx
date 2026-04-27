@@ -10,7 +10,7 @@ const Skills = ({dark}) => {
 
   const [scope,animate]=useAnimate()
 
-  const isInView=useInView(scope,{margin:"100px"})
+  const isInView=useInView(scope,{once:true})
   const [shimmerOne,setShimmerOne]=useState(false)
   const [shimmerTwo,setShimmerTwo]=useState(false)
 
@@ -92,9 +92,6 @@ const Skills = ({dark}) => {
     </h2>
 
     <motion.div
-    initial={{opacity:0,x:-200,filter:"blur(10px)"}}
-    whileInView={{opacity:1,x:0,filter:"blur(0px)"}}
-    transition={{delay:0.2,duration:1}}
      className='w-full shadow-acer mx-auto rounded-md mt-10 md:mx-10 flex flex-col md:flex-row justify-around h-fit bg-smallcard'
      ref={scope}
      >
