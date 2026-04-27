@@ -27,7 +27,13 @@ body,html{
   --bdr:oklch(81.294% 0.04946 255.177);
   --smallcard:oklch(92.2% 0 0);
   --fullColor:oklch(51.1% 0.096 186.391);
-
+   --shadowBack:0.3px 0.3px 5px rgba(0,0,0,0.2),-3px -4px 10px rgba(255,255,255,0.7);
+  --hoverShadow:inset 0.5px 0.5px 5px rgba(0,0,0,0.2),-3px -4px 10px rgba(255,255,255,0.7);
+  --borderlight:var(--color-neutral-100);
+  --inputcolor:var(--color-neutral-200);
+  --grad-from:var(--color-neutral-300);
+  --grad-via:var(--color-gray-200);
+  --grad-to:var(--color-neutral-300);
 
   
   
@@ -43,6 +49,13 @@ html.dark{
   --bdr:oklch(70.9% 0.01 56.259);
   --smallcard:oklch(20.8% 0.042 265.755);
   --fullColor:oklch(65.6% 0.241 354.308);
+  --shadowBack:0.3px 0.3px 5px rgba(206, 44, 44, 0.2),-3px -4px 10px rgba(137, 18, 18, 0.7);
+  --hoverShadow:inset 0.5px 0.5px 5px rgba(0,0,0,0.2),-3px -4px 10px rgba(244, 24, 24, 0.7);
+   --borderlight:var(--color-neutral-800);
+   --inputcolor:var(--color-neutral-500);
+   --grad-from:rgb(59, 130, 246);
+  --grad-via:#6ab1c0;
+  --grad-to:var(--color-neutral-700);
 }
 
 @theme inline {
@@ -67,6 +80,26 @@ html.dark{
  1px 1px 5px rgba(0, 0, 0, 0.3),
  inset -2px -2px 5px rgba(255, 255, 255, 1),
  inset 2px 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-shadowBack:var(--shadowBack);
+  --shadow-hoverShadow:var(--hoverShadow);
+
+    --shadow-soft: 0 4px 10px rgba(0, 0, 0, 0.15);
+  --shadow-strong: 0 1px 4px oklch(44.6% 0.043 257.281);
+  --shadow-glow: 0 5px 20px oklch(37.3% 0.034 259.733);
+  --shadow-weird:0px 4px 20px 0px rgba(15,12,12,0.08),0px 8px 12px -4px rgba(15,12,12,0.10),0px 0px 2px 0px rgba(15,12,12,0.10),0px 1px 2px 0px rgba(15,12,12,0.10);
+
+
+  --shadow-finta:0px 8px 12px -4px rgba(15,12,12,0.08),
+  0px 0px 2px 0px rgba(15,12,12,0.10),
+  0px 1px 2px 0px rgba(15,12,12,0.10);
+
+  --color-borderlight:var(--borderlight);
+  --color-inputcolor:var(--inputcolor);
+
+  --color-grad-from:var(--grad-from);
+  --color-grad-via:var(--grad-via);
+  --color-grad-to:via(--grad-to);
+
 
   
 
@@ -75,4 +108,9 @@ html.dark{
 
 .glass-card{
   @apply bg-white/10 backdrop-blur-md shadow-md
+}
+
+
+.rotate-button{
+  @apply absolute 
 }

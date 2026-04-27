@@ -8,7 +8,7 @@ import {motion} from 'motion/react'
 import Skills from './Components/Skills'
 import Footer from './Components/Footer'
 import Hero from './Components/Hero'
-import Contact from './Components/Contact'
+import Contact from './Components/EmailService/Contact'
 import Education from './Components/Education'
 
 
@@ -45,7 +45,7 @@ const App = () => {
         <Projects dark={dark}/>
         <Skills dark={dark} />
 
-        {/* <Contact/> */}
+        <Contact/>
 
         <Footer/>
         
