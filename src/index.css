@@ -21,7 +21,7 @@ body,html{
   --background:var(--color-neutral-100);
   --foreground:black;
   --card:white;
-  --nav:oklch(86.799% 0.01413 258.444);
+  --nav:oklch(93.195% 0.00984 253.015);
   --bottom:oklch(87.2% 0.01 258.338);
   --btn:var(--color-neutral-800);
   --bdr:oklch(81.294% 0.04946 255.177);
@@ -29,18 +29,20 @@ body,html{
   --fullColor:oklch(51.1% 0.096 186.391);
    --shadowBack:0.3px 0.3px 5px rgba(0,0,0,0.2),-3px -4px 10px rgba(255,255,255,0.7);
   --hoverShadow:inset 0.5px 0.5px 5px rgba(0,0,0,0.2),-3px -4px 10px rgba(255,255,255,0.7);
-  --borderlight:var(--color-neutral-100);
+  --borderlight:var(--color-neutral-200);
   --inputcolor:var(--color-neutral-200);
   --grad-from:var(--color-neutral-300);
   --grad-via:var(--color-gray-200);
   --grad-to:var(--color-neutral-300);
+  --hovered:var(--color-neutral-300);
+  --textxl:var(--color-neutral-700);
 
   
   
  
 }
 html.dark{
-  --background:black;
+  --background:var(--color-zinc-950);
   --foreground:white;
   --card:oklch(21.6% 0.006 56.043);
   --nav:oklch(21.6% 0.006 56.043);
@@ -51,11 +53,13 @@ html.dark{
   --fullColor:oklch(65.6% 0.241 354.308);
   --shadowBack:0.3px 0.3px 5px rgba(206, 44, 44, 0.2),-3px -4px 10px rgba(137, 18, 18, 0.7);
   --hoverShadow:inset 0.5px 0.5px 5px rgba(0,0,0,0.2),-3px -4px 10px rgba(244, 24, 24, 0.7);
-   --borderlight:var(--color-neutral-800);
+   --borderlight:var(--color-neutral-400);
    --inputcolor:var(--color-neutral-500);
    --grad-from:rgb(59, 130, 246);
   --grad-via:#6ab1c0;
   --grad-to:var(--color-neutral-700);
+  --hovered:var(--color-neutral-700);
+  --textxl:var(--color-neutral-300);
 }
 
 @theme inline {
@@ -99,6 +103,8 @@ html.dark{
   --color-grad-from:var(--grad-from);
   --color-grad-via:var(--grad-via);
   --color-grad-to:via(--grad-to);
+  --color-hovered:var(--hovered);
+  --color-textxl:var(--textxl);
 
 
   
