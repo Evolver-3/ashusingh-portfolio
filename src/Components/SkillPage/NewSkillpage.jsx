@@ -9,7 +9,8 @@ const skillgroups=[
 
 const NewSkillpage = () => {
   return (
-    <PageReuse text={"Stack and Tools"}>
+    <PageReuse text={"Stack and Tools"}
+    id="skills">
       <div className='leading loose'>
       
       {skillgroups.map((skill,i)=>(

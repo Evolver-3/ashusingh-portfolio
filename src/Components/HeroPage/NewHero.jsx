@@ -6,8 +6,8 @@ const NewHero = () => {
 
      <div className='px-10 mt-20 md:px-20'>
        <div className='flex gap-4 '>
-        <img src='/' alt="profile-pic" 
-        className='size-45  border border-smallcard rounded-xl '/>
+        <img src='/ProfilePic.jpg' alt="profile-pic" 
+        className='size-45  border border-smallcard rounded-xl object-cover'/>
 
         <div
         className='flex-1  py-10 flex flex-col gap-2'>
@@ -15,7 +15,7 @@ const NewHero = () => {
           <h2 className="text-xl font-semibold leading-tight text-foreground"
           >Ashu Singh</h2>
           <h2
-          className='text-lg text-textxl  '>25 | Software Engineer</h2>
+          className='text-lg text-textxl'>25 | Software Engineer</h2>
 
         </div>
       </div>

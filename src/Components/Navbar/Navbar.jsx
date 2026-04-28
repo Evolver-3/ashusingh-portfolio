@@ -8,10 +8,6 @@ const Navbar = ({dark,setDark}) => {
 
   const navItems=[
     {
-      title:"About",
-      href:'/about',
-    },
-    {
       title:"Projects",
       href:'#projects'
     },

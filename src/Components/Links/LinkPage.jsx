@@ -29,7 +29,7 @@ export default LinkPage
 
 export const LinksBtn=({href,children})=>{
   return(
-    <div className='px-5 py-3 rounded-xl shadow-finta text-foreground bg-background w-fit border border-borderlight hover:bg-hovered transition-colors duation-200 ease-in-out hover:shadow-weird'>
+    <div className='px-5 py-1 rounded-xl shadow-finta text-foreground bg-smallcard w-fit border border-borderlight hover:bg-hovered transition-colors duration-200 ease-in-out hover:shadow-weird'>
       <a
       className='flex items-center gap-4 font-semibold '
       href={href} target="_blank" rel="noopener noreferrer">

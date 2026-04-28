@@ -39,29 +39,31 @@ const projectCards=[
 ] 
 const NewProjectPage = () => {
   return (
-   <PageReuse text={"Projects"}>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4 text-foreground">
+   <PageReuse text={"Projects"}
+   id='projects'
+   >
+    <div className="grid grid-cols-1  gap-y-6 gap-x-4 text-foreground">
       {projectCards.map((pro)=>(
         <div key={pro.id}
-        className='w-full rounded-xl shadow-finta p-5 flex flex-col gap-5'>
+        className='w-full rounded-xl  p-5 flex flex-col gap-5 shadow-weird ring ring-neutral-100 '>
           <div className='flex justify-between'>
-            <h2 className='text-xl font-semibold'>{pro.name}</h2>
+            <h2 className='text-2xl font-semibold'>{pro.name}</h2>
             <h2 className='text-rose-500 text-sm'>0{pro.id}</h2>
           </div>
 
-          <p className='text-lg leading-snug'>
+          <p className='text-sm md:text-md leading-snug'>
             {pro.text}
           </p>
 
           <div className='flex-wrap gap-2 flex'>
             {pro.Stack.map((tech,i)=>(
-              <span key={i} className='px-2 py-1 rounded-lg shadow-acer text-sm text-textxl bg-bdrlight'>
+              <span key={i} className='px-2 py-1 rounded-lg shadow-acer text-sm text-textxl bg-smallcard border border-borderlight'>
                 {tech}
               </span>
             ))}
           </div>
 
-          <div className='w-full h-px border  border-neutral-300'/>
+          <div className='w-full h-px border  border-borderlight'/>
 
           <div
           className='flex justify-between '>

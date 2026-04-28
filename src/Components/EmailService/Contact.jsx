@@ -45,7 +45,7 @@ const Contact = () => {
   return (
     <div
     id='contact'
-    className='flex flex-col items-center justify-center py-10 px-10 relative w-full md:px-50'>
+    className='flex flex-col items-center justify-center py-10  relative w-full px-8 md:px-20'>
 
       {
         errorMessage && (
@@ -58,15 +58,15 @@ const Contact = () => {
         )
       }
 
-      <div className='bg-nav flex items-center justify-center h-12 text-foreground rounded-t-xl w-full'>
-          <h2 className='text-foreground'>contactMe <span className='text-rose-700'>@ashusingh@gmail.com</span> </h2>
+      <div className='bg-nav flex items-center justify-center h-12 text-foreground rounded-t-xl w-full shadow-weird'>
+          <h2 className='text-foreground'>contactMe <span className='text-rose-700'>ashusingh@gmail.com</span> </h2>
 
         </div>
 
       <form
       ref={formRef}
       onSubmit={sendEmail}
-       className='w-full rounded-b-xl px-8 flex flex-col shadow-weird bg-background text-foreground border-t-0 border border-borderlight items-center py-5 perspective-dramatic 
+       className='w-full rounded-b-xl px-8 flex flex-col shadow-weird bg-background text-foreground border-t-0 border border-smallcard items-center py-5 perspective-dramatic 
        '>
         <InputData text={"Enter your Email here"} type={"email"} placeholder={"Enter email"} name={"user_email"}/>
 
@@ -86,17 +86,17 @@ export default Contact
 
 const InputData=({text,type,placeholder,name,input=true})=>{
   return(
-    <div className='p-2 flex flex-col m-3 w-full shadow-finta rounded-sm '>
+    <div className='p-2 flex flex-col m-3 w-full '>
       <h2 className='text-lg'>{text}</h2>
         <div className='flex gap-3 items-center justify-center '>
           
           {input?(
             <input type={type} placeholder={placeholder} 
-            name={name} className='text-md outline-none w-full bg-inputcolor rounded-md px-2 py-1 ' required/>
+            name={name} className='text-md outline-none w-full  rounded-md px-2 py-1 hover:ring-1 hover:ring-borderlight transition-all duration-300 ease-in-out border border-bdr ' required/>
           ):(
             <textarea placeholder={placeholder} 
             name={name}
-            className='text-md outline-none resize-none w-full bg-inputcolor rounded-md px-2 py-1 ' required/>
+            className='text-md outline-none resize-none w-full rounded-md px-2 py-1 hover:ring-1 hover:ring-borderlight transition-all duration-300 ease-in-out border border-bdr' required/>
           )}
           
           </div>
