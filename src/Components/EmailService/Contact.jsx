@@ -123,7 +123,7 @@ const ButtonLoad=({text,loading})=>{
     type="submit"
     disabled={loading}
  
-    className='py-1 w-1/2 mt-5 rounded-xl   ring-2 ring-rose-100 text-lg bg-neutral-100 hover:ring-rose-200 transition-colors duration-200 delay-75 active:translate-3d text-foreground active:translate-y-px ease-in-out transform-content font-semibold bg-linear-to-r hover:shadow-weird '>
+    className='py-1 w-1/2 mt-5 rounded-xl hover:ring-2 hover:text-shadow-xs text-lg bg-inputcolor hover:bg-hovered  hover:ring-rose-200 transition-colors duration-200 delay-75 active:translate-3d text-foreground active:translate-y-px ease-in-out transform-content font-semibold bg-linear-to-r hover:shadow-weird '>
       {loading ?(
         <div
      
